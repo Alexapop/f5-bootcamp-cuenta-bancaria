@@ -28,7 +28,7 @@ public class AccountTest {
 
         account.calculateMonthlyInterest();
 
-        assertEquals(4006.6667f, account.balance, 0.001f);
+        assertEquals(4006.6667f, account.balance);
     }
 
 
@@ -49,7 +49,7 @@ public class AccountTest {
 
         account.calculateMonthlyStatement();
 
-        assertEquals(909f, account.balance, 0.001f);
+        assertEquals(909f, account.balance);
     }
 
  }
