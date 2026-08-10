@@ -42,4 +42,22 @@ public class SavingAccountTest {
         assertEquals(11000f,account.balance);
 }
 
+    @Test
+    void inactiveAccountShouldNotAllowDeposit(){
+        SavingsAccount account = new SavingsAccount(9000f, 0f);
+        account.deposit(1000f);
+        assertEquals(9000f, account.balance);
+        assertEquals(0, account.numberOfDeposits);
+        assertFalse(account.isActive);
+    }
+
+    @Test
+    void accountShouldBecomeInactiveWhenWithdrawalReducesBalanceBelowTenThousand(){
+        SavingsAccount account = new SavingsAccount(12000f, 0f);
+        account.withdraw(3000f);
+        assertEquals(9000f, account.balance);
+        assertEquals(1, account.numberOfWithdrawals);
+        assertFalse(account.isActive);
+    }
+
 }
