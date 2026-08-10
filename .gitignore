@@ -78,6 +78,9 @@ nb-configuration.xml
 .vscode/
 *.code-workspace
 
+# Local debug output
+debug.log
+
 ##############################
 ## macOS
 ##############################
