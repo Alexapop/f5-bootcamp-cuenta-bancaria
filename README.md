@@ -55,8 +55,53 @@ Métodos a redefinir:
 
 
 ## Entregables
-- Captura de pantalla del diagrama de clase o enlace público al archivo de diagrams.net
 
-- Captura de pantalla de la sección testing de VSCode que muestre que se ha complido con la cobertura de tests
+### Diagrama UML de clases
+
+```mermaid
+classDiagram
+    class Account {
+        #float balance
+        #int numberOfDeposits
+        #int numberOfWithdrawals
+        #float annualInterestRate
+        #float monthlyFee
+        +Account(balance, annualInterestRate)
+        #deposit(amount) void
+        #withdraw(amount) void
+        #calculateMonthlyInterest() void
+        #calculateMonthlyStatement() void
+        #print() void
+    }
+
+    class SavingsAccount {
+        #boolean isActive
+        +SavingsAccount(balance, annualInterestRate)
+        #updateStatus() void
+        #deposit(amount) void
+        #withdraw(amount) void
+        #calculateMonthlyStatement() void
+        #print() void
+    }
+
+    class CurrentAccount {
+        #float overdraft
+        +CurrentAccount(balance, annualInterestRate)
+        #withdraw(amount) void
+        #deposit(amount) void
+        #calculateMonthlyStatement() void
+        #print() void
+    }
+
+    Account <|-- SavingsAccount
+    Account <|-- CurrentAccount
+```
 
 
+#### Pruebas unitarias
+
+![Resultados de las pruebas unitarias](src/test/java/com/factoriaf5/unit-tests.jpg)
+
+#### Cobertura de tests
+
+![Cobertura de tests](src/test/java/com/factoriaf5/coverage-tests.jpg)
