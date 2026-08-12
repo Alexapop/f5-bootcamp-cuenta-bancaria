@@ -1,4 +1,4 @@
-package com.factoriaf5;
+package com.factoriaf5.domain;
 
 public class Account {
 
