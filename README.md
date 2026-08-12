@@ -58,50 +58,13 @@ Métodos a redefinir:
 
 ### Diagrama UML de clases
 
-```mermaid
-classDiagram
-    class Account {
-        #float balance
-        #int numberOfDeposits
-        #int numberOfWithdrawals
-        #float annualInterestRate
-        #float monthlyFee
-        +Account(balance, annualInterestRate)
-        #deposit(amount) void
-        #withdraw(amount) void
-        #calculateMonthlyInterest() void
-        #calculateMonthlyStatement() void
-        #print() void
-    }
-
-    class SavingsAccount {
-        #boolean isActive
-        +SavingsAccount(balance, annualInterestRate)
-        #updateStatus() void
-        #deposit(amount) void
-        #withdraw(amount) void
-        #calculateMonthlyStatement() void
-        #print() void
-    }
-
-    class CurrentAccount {
-        #float overdraft
-        +CurrentAccount(balance, annualInterestRate)
-        #withdraw(amount) void
-        #deposit(amount) void
-        #calculateMonthlyStatement() void
-        #print() void
-    }
-
-    Account <|-- SavingsAccount
-    Account <|-- CurrentAccount
-```
+![Diagrama UML de clases](docs/assets/uml-diagram.jpg)
 
 
 #### Pruebas unitarias
 
-![Resultados de las pruebas unitarias](src/test/java/com/factoriaf5/unit-tests.jpg)
+![Resultados de las pruebas unitarias](docs/assets/unit-tests.jpg)
 
 #### Cobertura de tests
 
-![Cobertura de tests](src/test/java/com/factoriaf5/coverage-tests.jpg)
+![Cobertura de tests](docs/assets/coverage-tests.jpg)
